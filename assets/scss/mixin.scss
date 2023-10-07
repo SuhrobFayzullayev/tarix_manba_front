@@ -1,0 +1,12 @@
+@mixin font($fs, $lh, $fw, $color) {
+    font-size: $fs + px;
+    line-height: $lh + px;
+    font-weight: $fw;
+    color: $color;
+}
+
+@mixin media($size){
+    @media (max-width: $size) {
+        @content;
+    }
+}

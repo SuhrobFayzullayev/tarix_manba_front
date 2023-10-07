@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #A20025;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba($color: #A20025, $alpha: 0.6);
+}
+
+input, select {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    position: relative;
+    background: transparent;
+    color: $white-color;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid $warning-color;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $warning-color;
+        z-index: -1;
+        transition: transform .3s;
+        transform-origin: 0 0;
+        transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+        transform: scaleY(1);
+    }
+
+
+    &:hover::before {
+        transform: scaleY(0);
+    }
+}
+
+.btn-transparent {
+    cursor: pointer;
+    color: $warning-color;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 12px;
+    user-select: none;
+}
+
+#banner-btn {
+    position: relative;
+    background: transparent;
+    color: $white-color;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid $warning-color;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $warning-color;
+        z-index: -1;
+        transition: transform .3s;
+        transform-origin: 0 0;
+        transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+        transform: scaleY(1);
+    }
+
+
+    &:hover::before {
+        transform: scaleY(0);
+    }
+}
+
+.next-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    background: #F1F1F1;
+    cursor: pointer;
+
+    &:hover {
+        background: #A20025;
+
+        svg {
+            path {
+                stroke: white;
+            }
+        }
+    }
+}
+
+.title {
+    color: $text-color;
+    font-size: 36px;
+    font-weight: 700;
+
+    @include media(800px) {
+        font-size: 30px;
+    }
+
+    @include media(480px) {
+        font-size: 26px;
+    }
+}
+
+.title2 {
+    color: $text-color;
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.title3 {
+    color: #242424;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba($color: #000000, $alpha: 0.5);
+    z-index: 1001;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFF;
+    z-index: 1002;
+}
+
+.proxima-14-20-400 {
+    color: #313131;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.swiper-container {
+    position: relative;
+
+    .swiper {
+        position: initial !important;
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            background: rgba($color: #242424, $alpha: 0.4);
+            width: 30px !important;
+            height: 30px !important;
+        }
+
+        .swiper-button-prev.swiper-button-disabled,
+        .swiper-button-next.swiper-button-disabled {
+            background: rgba($color: #242424, $alpha: 0.12);
+        }
+
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            font-size: 11px !important;
+            color: #fff;
+        }
+
+        .swiper-button-prev {
+            top: -40px;
+            left: calc(100% - 70px);
+        }
+
+        .swiper-button-next {
+            right: 0;
+            top: -40px;
+        }
+
+        @include media(800px) {
+            .swiper-button-prev {
+                top: calc(100% + 40px);
+                left: calc(50% - 45px);
+            }
+
+            .swiper-button-next {
+                right: calc(50% - 30px);
+                top: calc(100% + 40px);
+            }
+        }
+    }
+}
+
+@include media(1120px) {
+    #eleccar {
+        min-height: 350px !important;
+    }
+}
+
+@include media(601px) {
+    #eleccar {
+        min-height: 250px !important;
+    }
+}
+
+.parent {
+    padding: 180px 0 80px;
+
+    .main {
+        display: flex;
+        gap: 60px;
+
+        @media screen and (max-width:1024px){
+            flex-wrap: wrap;
+        }
+
+        @media screen and (max-width:576px){
+            gap: 40px;
+        }
+
+        .sidebar {
+            width: 260px;
+            @media screen and (max-width:1024px){
+                width: 100%;
+            }
+
+            .title3 {
+                margin-bottom: 22px;
+            }
+
+            &__dropdown {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                @media screen and (max-width:1024px){
+                    display: none;
+                }
+            }
+            &__mobile__btn{
+                padding: 16px 24px;
+                border-radius: 6px;
+                overflow: hidden;
+                background-color: #A20025;
+                color: #fff;
+                font:600 16px/24px sans-serif;
+            }
+        }
+
+        .content {
+            flex-grow: 1;
+            max-width: 1000px;
+            @media screen and (max-width:1024px){
+                width:100%;
+            }
+
+            &__maps {
+                margin-bottom: 80px;
+                @media screen and (max-width:576px){
+                    margin-bottom: 40px;
+                }
+            }
+
+            &__items {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                margin-bottom: 50px;
+            }
+        }
+    }
+    @include media(800px){
+        padding: 130px 0 80px;
+    }
+}

@@ -1,0 +1,132 @@
+.signup-page {
+    padding-top: 160px;
+    padding-bottom: 80px;
+
+    .form {
+        width: 700px;
+        margin: 0 auto;
+        padding: 35px 50px 41px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        border: 1px solid #DBDBDB;
+        background: #FFF;
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            label {
+                @include font(16, 30, 600, #313131);
+            }
+
+            &-robot {
+                flex-direction: row;
+                align-items: flex-end;
+                gap: 20px;
+
+                button {
+                    width: 140px;
+                    height: 50px;
+
+                    img {
+                        width: inherit;
+                        height: inherit;
+                    }
+                }
+            }
+
+            &-links {
+                flex-direction: row;
+                align-items: center;
+                margin-top: 15px;
+                justify-content: space-between;
+                padding: 10px 30px;
+
+                span {
+                    font-size: 14px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+
+                &.google {
+                    border: 1px solid #DBDBDB;
+                    background: #FFF;
+                    color: #313131;
+                }
+
+                &.facebook {
+                    background: #3B599A;
+                    color: #FFF;
+                }
+
+                &.signup-btn {
+                    padding: 0;
+
+                    button {
+                        width: 100%;
+                        padding: 18px;
+                        background: #A20025;
+                        border: 2px solid #A20025;
+                        transition: .5s;
+
+                        &:hover {
+                            background: transparent;
+                            color: #313131;
+                        }
+                    }
+                }
+            }
+
+            &-regbtn {
+                flex-direction: row;
+                justify-content: space-between;
+
+                button {
+                    @include font(18,30,600, #A20025);
+                    background: transparent;
+                }
+            }
+        }
+
+        &__input {
+            width: 100%;
+            background: #F8F8F8;
+            position: relative;
+
+            input {
+                width: 100%;
+                background: #F8F8F8;
+                padding: 13px 20px;
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            .lock {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                top: 0;
+                right: 0;
+                border: 1px solid #DBDBDB;
+                background: #fff;
+                display: grid;
+                place-items: center;
+
+                svg {
+                    opacity: 0.4;
+                }
+            }
+        }
+        @include media(750px){
+            width: 100%;
+            border: none;
+            padding: 35px 20px 41px;
+            .title{
+                text-align: center;
+            }
+        }
+
+    }
+}
